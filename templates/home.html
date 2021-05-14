@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home page{% endblock %}
+{% block body %}
+<h1>Madlibs :</h1>
+<form action="/story">
+    {% for input in inputs %}
+    <label>{{input}} :</label> <input type="text" name="{{input}}"><br>
+    {% endfor %}
+    <input type="hidden" name="index" value="{{index}}">
+    <button>Get Story</button>
+</form>
+{% endblock %}

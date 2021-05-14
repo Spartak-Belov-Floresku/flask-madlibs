@@ -1,0 +1,2 @@
+questions = [['verb', 'noun'], ['place', 'noun', 'verb', 'adjective', 'plural_noun']]
+stories = [["I love to {verb} a good {noun}."], ["Once upon a time in a long-ago {place}, there lived a large {adjective} {noun}. It loved to {verb} {plural_noun}."]]
