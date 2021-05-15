@@ -11,6 +11,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = "some_key"
 debug = DebugToolbarExtension(app)
 
+''' class creates references for navigation bar '''
 nav_bar = Nav.get_nav()
 
 @app.route('/')
@@ -19,9 +20,14 @@ def home():
     index_story = questions.index(inputs)
     return render_template("home.html", nav_bar = nav_bar, inputs = inputs, index = index_story)
 
+
+''' the method can process any request and send responses '''
 @app.route('/<path>')
 def general(path):
-    return eval(path)()
+    try:
+        return eval(path)()
+    except:
+        return '404 the page you are looking for does not exist.'
     
 
 
